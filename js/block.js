@@ -28,7 +28,6 @@ AFRAME.registerComponent('block', {
 				positionPlot(currentPlot, lastPlot, ring, ringIndex);
 
 			}
-
 		}//arrangePlots
 		function positionPlot(plot, lastPlot, ring, ringIndex){
 
@@ -37,61 +36,102 @@ AFRAME.registerComponent('block', {
 			const topWidth 		= geometry.topWidth;
 			const bottomWidth 	= geometry.bottomWidth;
 			const halfHeight 	= height / 2;
+			const halfWidth 	= topWidth/2;
+			const halfWing 		= (topWidth/2) + ((bottomWidth/2) - (topWidth/2))/2;
+			const angleRot 		= 120;
+			const halfRot 		= 180;
 
-			let xOffset 	= 0
-			let yOffset 	= 0;
-			let yRotation 	= 0;
-			let position 	= "";
+			let rotation 	= 0;
+			let x 			= 0;
+			let y 			= 0;
+			let pivot 		= "";
+
+			console.log("ring : ", ring, "index : ", ringIndex);
 
 			switch(ring){
 				case 0:
 					switch(ringIndex){
 						case 0:
-							yOffset = -halfHeight;
+						 	x 		= 0;
+						 	y 		= -height;
 							break;
 						case 1:
-							yOffset 	= halfHeight;
-							yRotation 	= 180;
+							x 			= 0;
+							y 			= height;
+							rotation 	= 180;
 							break;
 					}
 					break;
 				case 1:
 					switch(ringIndex){
 						case 0:
-							let thing = (height + halfHeight) / 2;
-							let otherThing = (topWidth - height);
-							position 	= `-${bottomWidth/2} ${0} ${0}`
-							yRotation 	= -120;
-
-							console.log("trsfadf", ((topWidth + bottomWidth) / 2));
-							/*
-							yOffset 	= -height;
-							xOffset 	= -((topWidth + bottomWidth) / 2);
-							yRotation 	= 240;
-							AFRAME.utils.entity.setComponentProperty(plot, "rotation.y", "240");
-							plot.setAttribute("position", `${xOffset} 0 ${yOffset}`);
-							*/
+							x 			= 0;
+							y 			= -height;
+							rotation 	= halfRot
 							break;
 						case 1:
-							/*yOffset 	= -(height*2);
-							yRotation 	= 180
-							AFRAME.utils.entity.setComponentProperty(plot, "position.z", yOffset);
-							AFRAME.utils.entity.setComponentProperty(plot, "rotation.y", yRotation);*/
+							x 			= halfWing
+							y 			= -halfHeight;
+							rotation 	= angleRot;
 							break;
 						case 2:
+							x 			= halfWing;
+							y 			= halfHeight;
+							rotation 	= angleRot/2;
 							break;
+						case 3:
+							x 			= 0;
+							y 			= height;
+							rotation 	= 0;
+							break;
+						case 4:
+							x 			= -halfWing;
+							y 			= halfHeight;
+							rotation 	= -angleRot/2;
+							break;
+						case 5:
+							x 			= -halfWing;
+							y 			= -halfHeight;
+							rotation 	= -angleRot;
+							break;
+					}	
+					break;
+				case 2:
+					switch(ringIndex){
+						case 0:
+							y 			= -height*2;
+							x 			= -halfWidth;
+							rotation 	= halfRot;
+							break;
+						case 1:
+							y 			= -height*3;
+							x 			= topWidth;
+							rotation 	= 0;
+							break;
+						case 2:
+							rotation 	= -angleRot/2;
+							y 			= -height;
+							x 			= (topWidth/2) + (bottomWidth/2);
+							pivot 		= "bottom";
+							break;
+						case 3:
+							rotation 	= -angleRot;
+							x			= bottomWidth;
+							pivot 		= "bottom";
+							break;		
 					}
 					break;
 			}
-			if(!!position) 	plot.setAttribute("position", position);
-			if(!!yOffset) 	AFRAME.utils.entity.setComponentProperty(plot, "position.z", yOffset);
-			if(!!xOffset)	AFRAME.utils.entity.setComponentProperty(plot, "position.x", xOffset);
-			if(!!yRotation) AFRAME.utils.entity.setComponentProperty(plot, "rotation.y", yRotation);
+			
+
+			if(!!pivot) 	AFRAME.utils.entity.setComponentProperty(plot, "geometry.pivot", pivot);
+			if(!!rotation) 	AFRAME.utils.entity.setComponentProperty(plot, "rotation.y", rotation);
+			plot.setAttribute("position", `${x} 0 ${y}`);
 		}//positionPlot
 		function calcRingIndex(plotIndex){
-			const rings	= (plotIndex - 2) / 4;
+			const rings		= Math.sqrt(plotIndex/2);
 			const rounded 	= Math.ceil(rings);
-			return rounded;
+			return rounded-1;
 		}//calcRingIndex
 		
 	},
