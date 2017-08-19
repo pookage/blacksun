@@ -246,9 +246,70 @@ AFRAME.registerComponent('block', {
 							rotation 	= -angleRot/2;
 							break;
 						case 5:
-
+							x 			= (topWidth*ring) - (wingWidth/2);
 							y 			= -(height / 2);
 							rotation 	= angleRot;
+							break;
+						case 6:
+							x 			= (topWidth*ring) - (wingWidth/2);
+							y 			= (height/2)
+							rotation 	= angleRot/2;
+							break;
+						case 7:
+							y 			= height*2;
+							x 			= topWidth*(ring-1);
+							rotation 	= -angleRot;
+							pivot 		= "bottom";
+							break;
+						case 8:
+							x 			= (topWidth * (ring/2)) + (wingWidth/2);
+							y 			= height*(ring - 0.5);
+							rotation 	= angleRot/2;
+							break;
+						case 9:
+							x 			= topWidth + wingWidth;
+							y 			= height*ring;
+							break;
+						case 10:
+							y 			= height*ring;
+							rotation 	= halfRot;
+							pivot 		= "bottom";
+							break;
+						case 11:
+							y 			= height*ring;
+							x 			= -(topWidth + wingWidth)
+							break;
+						case 12:
+							x 			= -((topWidth*(ring/2)) + (wingWidth/2));
+							y 			= height * (ring-0.5);
+							rotation 	= -angleRot/2;
+							break;
+						case 13:
+							x 			= -(topWidth*(ring-1))
+							y 			= height * (ring/2);
+							pivot 		= "bottom";
+							rotation 	= angleRot;
+							break;
+						case 14:
+							x 			= -((topWidth*ring) - (wingWidth/2));
+							y 			= height/2;
+							rotation 	= -angleRot/2;
+							break;
+						case 15:
+							x 			= -((topWidth*ring) - (wingWidth/2))
+							y 			= -(height/2);
+							rotation 	= -angleRot;
+							break;
+						case 16:
+							x 			= -(topWidth*(ring-1))
+							y 			= -(height*2);
+							pivot 		= "bottom";
+							rotation 	= angleRot/2;
+							break;
+						case 17:
+							rotation 	= -angleRot;
+							x 			= -((topWidth*(ring/2)) + (wingWidth/2));
+							y 			= -(height*(ring-1) + (height/2)) 
 							break;
 					}
 					break;
