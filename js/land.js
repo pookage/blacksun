@@ -14,7 +14,7 @@ AFRAME.registerPrimitive('a-land', {
 		geometry: {
 			primitive: "trapezium",
 			topWidth: 11.55,
-			bottomWidth: 23.09,
+			bottomWidth: 23.10,
 			height: 10,
 			flat: true,
 			pivot: "top"
