@@ -898,6 +898,46 @@ AFRAME.registerComponent('block', {
 							break;
 					}
 					break;
+				case 9:
+					switch(ringIndex){
+						case 1:
+							y 			= -(height*ring);
+							x 			= -((topWidth*2) + wingWidth)
+							pivot 		= "bottom";
+							break;
+						case 2:
+							y 			= -(height*ring);
+							x 			= -(topWidth)
+							rotation 	= halfRot;
+							break;
+						case 3:
+							x 			= wingWidth;
+							y 			= -(height*ring);
+							pivot 		= "bottom";
+							break;
+						case 4:
+							y 			= -(height*ring);
+							x 			= topWidth*2;
+							rotation 	= halfRot;
+							break;
+						case 5:
+							x 			= (topWidth*3) + wingWidth;
+							y 			= -(height*ring);
+							pivot 		= "bottom";
+							break;
+						case 6:
+							y 			= -(height*ring)
+							x 			= (topWidth*4) + wingWidth
+							rotation 	= -angleRot/2;
+							pivot 		= "bottom";
+							break;
+						case 7:
+							x 			= ((topWidth*5) + (wingWidth/2))
+							y 			= -((height*(ring-1)) - (height/2))
+							rotation 	= angleRot;
+							break;
+					}
+					break;
 			}
 			
 
