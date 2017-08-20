@@ -1321,9 +1321,246 @@ AFRAME.registerComponent('block', {
 				case 11:
 					switch(ringIndex){
 						case 1:
+							x 			= -((topWidth*3) + wingWidth)
 							y 			= -(height*ring);
 							pivot 		= "bottom";
 							break;
+						case 2:
+							x 			= -(topWidth*2)
+							y 			= -(height*ring);
+							rotation 	= halfRot;
+							break;
+						case 3:
+							x 			= -wingWidth;
+							y 			= -(height*ring);
+							pivot 		= "bottom";
+							break;
+						case 4:
+							x 			= topWidth;
+							y 			= -(height*ring);
+							rotation 	= halfRot;
+							break;
+						case 5:
+							x 			= ((topWidth*2) + wingWidth)
+							y 			= -(height*ring);
+							pivot 		= "bottom";
+							break;
+						case 6:
+							x 			= (topWidth*4);
+							y 			= -(height*ring);
+							rotation 	= halfRot;
+							break;
+						case 7:
+							x 			= ((topWidth*5) + wingWidth)
+							y 			= -(height*ring);
+							pivot 		= "bottom";
+							break;
+						case 8:
+							x 			= (topWidth*6)
+							y 			= -(height*(ring-1));
+							pivot 		= "bottom";
+							rotation 	= -angleRot/2;
+							break;
+						case 9:
+							x 			= ((topWidth*7) - (wingWidth/2))
+							y 			= -((height*(ring-2)) - (height/2));
+							rotation 	= angleRot;
+							break;
+						case 10:
+							x 			= ((topWidth*7) + wingWidth)
+							y 			= -(height*(ring-4));
+							pivot 		= "bottom";
+							rotation 	= -angleRot/2;
+							break;
+						case 11:
+							x 			= ((topWidth*8) + (wingWidth/2))
+							y 			= -((height*(ring-5)) - (height/2));
+							rotation 	= angleRot;
+							break;
+						case 12:
+							x 			= (topWidth*9)
+							y 			= -(height*(ring-7));
+							pivot 		= "bottom";
+							rotation 	= -angleRot/2;
+							break;
+						case 13:
+							x 			= ((topWidth*10) - (wingWidth/2))
+							y 			= -((height*(ring-8)) - (height/2));
+							rotation 	= angleRot;
+							break;
+						case 14:
+							x 			= ((topWidth*11) - wingWidth)
+							y 			= -(height*(ring-10));
+							pivot 		= "bottom";
+							rotation 	= -angleRot/2;
+							break;
+						case 15:
+							y 			= -(height*(ring-ring));
+							x 			= (topWidth*11)
+							pivot 		= "bottom";
+							rotation 	= -angleRot;
+							break;
+						case 16:
+							x 			= ((topWidth*10) + (wingWidth/2))
+							y 			= ((height*(ring-10)) + (height/2));
+							rotation 	= angleRot/2;
+							break;
+						case 17:
+							y 			= (height*(ring-8));
+							x 			= ((topWidth*9) + wingWidth)
+							pivot 		= "bottom";
+							rotation 	= -angleRot;
+							break;
+						case 18:
+							x 			= ((topWidth*9) - (wingWidth/2))
+							y 			= ((height*(ring-7)) + (height/2));
+							rotation 	= angleRot/2;
+							break;
+						case 19:
+							y 			= (height*(ring-5));
+							x 			= ((topWidth*8))
+							pivot 		= "bottom";
+							rotation 	= -angleRot;
+							break;
+						case 20:
+							x 			= ((topWidth*7) + (wingWidth/2))
+							y 			= ((height*(ring-4)) + (height/2));
+							rotation 	= angleRot/2;
+							break;
+						case 21:
+							y 			= (height*(ring-2));
+							x 			= ((topWidth*6) + wingWidth)
+							pivot 		= "bottom";
+							rotation 	= -angleRot;
+							break;
+						case 22:
+							x 			= ((topWidth*6) - (wingWidth/2))
+							y 			= ((height*(ring-1)) + (height/2));
+							rotation 	= angleRot/2;
+							break;
+						case 23:
+							x 			= (topWidth*5)
+							y 			= height*ring;
+							break;
+						case 24:
+							x 			= ((topWidth*3) + wingWidth)
+							y 			= height*ring;
+							pivot 		= "bottom";
+							rotation 	= halfRot;
+							break;
+						case 25:
+							x 			= (topWidth*2)
+							y 			= height*ring;
+							break;
+						case 26:
+							x 			= wingWidth;
+							y 			= height*ring;
+							pivot 		= "bottom";
+							rotation 	= halfRot;
+							break;
+						case 27:
+							x 			= -(topWidth)
+							y 			= height*ring;
+							break;
+						case 28:
+							x 			= -((topWidth*2) + wingWidth)
+							y 			= height*ring;
+							pivot 		= "bottom";
+							rotation 	= halfRot;
+							break;
+						case 29:
+							x 			= -(topWidth*4)
+							y 			= height*ring;
+							break;
+						case 30:
+							x 			= -((topWidth*5) + wingWidth)
+							y 			= height*ring;
+							pivot 		= "bottom";
+							rotation 	= halfRot;
+							break;
+						case 31:
+							x 			= -(topWidth*6)
+							y 			= height*(ring-1);
+							pivot 		= "bottom";
+							rotation 	= angleRot;
+							break;
+						case 32:
+							x 			= -((topWidth*7) - (wingWidth/2))
+							y 			= ((height*(ring-2)) - (height/2))
+							rotation 	= -angleRot/2;
+							break;
+						case 33:
+							x 			= -((topWidth*8) - wingWidth)
+							y 			= height*(ring-4);
+							pivot 		= "bottom";
+							rotation 	= angleRot;
+							break;
+						case 34:
+							x 			= -((topWidth*(8)) + (wingWidth/2))
+							y 			= ((height*(ring-5)) - (height/2))
+							rotation 	= -angleRot/2;
+							break;
+						case 35:
+							x 			= -(topWidth*(ring-2))
+							y 			= height*(ring-7);
+							pivot 		= "bottom";
+							rotation 	= angleRot;
+							break;
+						case 36:
+							x 			= -((topWidth*(ring-1)) - (wingWidth/2))
+							y 			= ((height*(ring-8)) - (height/2))
+							rotation 	= -angleRot/2;
+							break;
+						case 37:
+							x 			= -((topWidth*ring) - wingWidth)
+							y 			= height*(ring-10);
+							pivot 		= "bottom";
+							rotation 	= angleRot;
+							break;
+						case 38:
+							x 			= -(topWidth*ring)
+							pivot 		= "bottom";
+							rotation 	= angleRot/2;
+							break;
+						case 39:
+							x 			= -((topWidth*(ring-1)) + (wingWidth/2))
+							y 			= -((height*(ring-10)) + (height/2))
+							rotation 	= -angleRot;
+							break;
+						case 40:
+							y 			= -(height*(ring-8))
+							x 			= -((topWidth*9) + wingWidth)
+							pivot 		= "bottom";
+							rotation 	= angleRot/2;
+							break;
+						case 41:
+							x 			= -((topWidth*(ring-2)) - (wingWidth/2))
+							y 			= -((height*(ring-7)) + (height/2))
+							rotation 	= -angleRot;
+							break;
+						case 42:
+							y 			= -(height*(ring-5))
+							x 			= -((topWidth*8))
+							pivot 		= "bottom";
+							rotation 	= angleRot/2;
+							break;
+						case 43:
+							x 			= -((topWidth*(ring-4)) + (wingWidth/2))
+							y 			= -((height*(ring-4)) + (height/2))
+							rotation 	= -angleRot;
+							break;
+						case 44:
+							y 			= -(height*(ring-2))
+							x 			= -((topWidth*6) + wingWidth)
+							pivot 		= "bottom";
+							rotation 	= angleRot/2;
+							break;
+						case 45:
+							x 			= -((topWidth*(ring-5)) - (wingWidth/2))
+							y 			= -((height*(ring-1)) + (height/2))
+							rotation 	= -angleRot;
+							break;
+
 					}
 					break;
 			}
@@ -1331,6 +1568,7 @@ AFRAME.registerComponent('block', {
 
 			if(!!pivot) 	AFRAME.utils.entity.setComponentProperty(plot, "geometry.pivot", pivot);
 			if(!!rotation) 	AFRAME.utils.entity.setComponentProperty(plot, "rotation.y", rotation);
+			if(ring == 11) 	AFRAME.utils.entity.setComponentProperty(plot, "material.color", "#222")
 			plot.setAttribute("position", `${x} 0 ${y}`);
 		}//positionPlot
 		function calcRingIndex(plotIndex){
