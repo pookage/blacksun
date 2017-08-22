@@ -13,21 +13,14 @@ AFRAME.registerComponent('land-content', {
 		const parentGeometry 	= this.el.parentElement.getAttribute("geometry");
 		const height 			= parentGeometry.height;
 		const pivot 			= parentGeometry.pivot;
-		const offset 			= height/2;
+		let offset 				= height/2;
 
-
-
+		//add contents of land to new land-content entity
 		this.el.innerHTML 	= contents;
 
-		switch(pivot){
-			case "top":
-				AFRAME.utils.entity.setComponentProperty(this.el, "position.z", offset);
-				break;
-			case "bottom":
-				AFRAME.utils.entity.setComponentProperty(this.el, "position.z", -offset);
-				break;
-		}
-
+		//offset content in the correct direction based on pivot location
+		if(pivot = "bottom") offset = -offset;
+		AFRAME.utils.entity.setComponentProperty(this.el, "position.z", offset);
 	},
 	update: function () {},
 	tick: function () {},
