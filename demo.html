@@ -6,6 +6,7 @@
 	<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
 	<script src="https://rawgit.com/pookage/aframe-trapezium-primitive/master/js/trapezium-primitive.js"></script>
 	<script src="js/block.js"></script>
+	<script src="js/land-content.js"></script>
 	<script src="js/land.js"></script>
 </head>
 <body>
@@ -15,8 +16,16 @@
 
 			<!--RING 0-->
 				<a-land>
+					<a-entity>
+						<a-box color="red">
+						</a-box>
+					</a-entity>
+					<a-box color="green" position="-1 0 -2">
+					</a-box>
 				</a-land>
 				<a-land>
+					<a-box color="blue">
+					</a-box>
 				</a-land>
 
 			<!--RING 1-->
@@ -455,15 +464,15 @@
 			
 		</a-block>
 
-		<!--BIRDS-EYE CAMERA
+		<!--BIRDS-EYE CAMERA-->
 		<a-camera
 			fov="60"
-			position="0 250 0"
+			position="0 100 0"
 			rotation="-90 0 0">
-		</a-camera>-->
-		<a-camera
-			fov="60">
 		</a-camera>
+		<!--<a-camera
+			fov="60">
+		</a-camera>-->
 	</a-scene>
 </body>
 </html>

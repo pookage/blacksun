@@ -4,6 +4,8 @@ AFRAME.registerComponent('block', {
 		const element 	= this.el;
 		const land 		= element.children;
 
+		console.log(land.length);
+
 		arrangePlots(land);
 
 		function arrangePlots(plots){
